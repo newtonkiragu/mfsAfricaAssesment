@@ -18,10 +18,10 @@ http://pasteb1n.herokuapp.com/
 API Endpoint | Description | Request
 ---- | :---- | :----- |
 http://mfsafrica-newton.herokuapp.com/points/ | Display a JSON object containing all comma separated points | GET
-http://mfsafrica-newton.herokuapp.com/points/new/ | Create a new list of points | POST
+http://mfsafrica-newton.herokuapp.com/points/ | Create a new list of points | POST
 http://mfsafrica-newton.herokuapp.com/points/<id>/ | Display a JSON object of a specific point containing the calculation of the closest point | GET
-http://mfsafrica-newton.herokuapp.com/points/<id>/edit | Edit a comma separated point | PUT
-http://mfsafrica-newton.herokuapp.com/points/<id>/delete | Delete a comma separated point | DELETE
+http://mfsafrica-newton.herokuapp.com/points/<id>/ | Edit a comma separated point | PUT
+http://mfsafrica-newton.herokuapp.com/points/<id>/ | Delete a comma separated point | DELETE
 
 ## Setup and installations
 
