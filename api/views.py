@@ -21,16 +21,14 @@ class PointsViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        print(request.data)
         points = list(eval(request.data))
         result = Points.closest_points(points)
         data = {"string_of_csv": str(points), "closest_point": str(result)}
-        print(data)
         serializer = PointsSerializer(data=data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        pointsModel = Points(**serializer.data)
-        pointsModel.save()
+        points_model = Points(**serializer.data)
+        points_model.save()
         return Response({'items': result})
 
     def retrieve(self, request, pk=None):
