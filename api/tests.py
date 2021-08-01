@@ -20,29 +20,7 @@ class PointsTestCase(APITestCase):
         point_id = 1
         self.new_set_of_points.save()
         point = models.Points.objects.get(pk=point_id)
-        response = self.client.get(reverse('point', kwargs={'pk': point.id}), format="json")
+        response = self.client.get(reverse('points', kwargs={'pk': point.id}), format="json")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertContains(response, point)
-
-    def test_update_point(self):
-        point_id = 1
-        self.new_set_of_points.save()
-        point = models.Points.objects.get(pk=point_id)
-        change_point = {'code': 'return False'}
-        res = self.client.put(
-            reverse('point', kwargs={'pk': point.id}),
-            change_point, format='json'
-        )
-        self.assertEqual(res.status_code, status.HTTP_200_OK)
-
-    def test_delete_point(self):
-        point_id = 1
-        # self.new_set_of_points.save()
-        point = models.Points.objects.get(pk=point_id)
-        response = self.client.delete(
-            reverse('point', kwargs={'pk': point.id}),
-            format='json',
-            follow=True)
-
-        self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
