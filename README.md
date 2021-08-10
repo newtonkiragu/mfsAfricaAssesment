@@ -4,7 +4,7 @@
 An application interface that receives a string of comma separated points and calculates the closest points.
 
 #### Link to deployed site
-http://pasteb1n.herokuapp.com/
+http://mfsafrica-karanu.herokuapp.com
 
 ## Table of content
 1. [Description](#description)
