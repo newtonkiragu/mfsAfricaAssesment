@@ -17,13 +17,13 @@ class Points(models.Model):
         :return computed list of comma separated values sorting them from the point nearest zero:
         :rtype list:
         """
-        sorting_dictionary = {}
 
-        for x in points:
-            p = x[0] - x[1]
-            sorting_dictionary[x] = p
+        k = 2
+        points.sort(key=lambda K: K[0] ** 2 + K[1] ** 2)
+        return points[:k]
 
-        computed_list = list({k: v for k, v in
-                              sorted(sorting_dictionary.items(), key=lambda item: item[1], reverse=True)}.keys())
-        print(computed_list)
-        return computed_list
+# loop through the list of points
+# get a specific pair of points
+# compare the set of points to the previous set
+# splice the list created to get the closest points
+
